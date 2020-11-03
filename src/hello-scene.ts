@@ -7,10 +7,19 @@ export class HelloScene extends Phaser.Scene {
     super('hello');
   }
 
+  preload() {
+    this.load.image({
+      key: 'logo',
+      url: require('./assets/phaser3-logo.png'),
+    });
+  }
+
   create() {
-    this.hello = this.add.text(100, 100, 'Hello', {
+    this.hello = this.add.text(200, 200, 'Hello', {
       font: '128px Arial Bold',
       fill: '#FBFBAC',
     });
+
+    this.add.image(400, 70, 'logo');
   }
 }
